@@ -1,0 +1,44 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background: #007BFF;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+/* Main content styles */
+main {
+    padding: 2em;
+    max-width: 600px;
+    margin: auto;
+}
+
+main a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background: #222;
+    color: #fff;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
