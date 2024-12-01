@@ -4,7 +4,8 @@
 
 ## About
 
-TODO: Describe what is this project!
+This project is for HTML and CSS study purpose, so to start I'm recreating an existing interface.  
+The chosen one: Google ... or better et, Googly.
 
 ### Prototype
 
