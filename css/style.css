@@ -4,14 +4,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #202124;
     color: #333;
 }
 
 /* Header styles */
 header {
-    background: #007BFF;
-    color: white;
+    background: #202124;
+    color: black;
     padding: 1em 0;
     text-align: center;
 }
