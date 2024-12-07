@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Style Sandbox 🪴</title>
+
+    <style>
+        /* How to customize things?
+         * By tag, class, id.
+         */
+        body {
+            color: black;
+        }
+
+        p {
+            color: darkslateblue;
+        }
+
+        main p {
+            /* Descendants */
+            font-family: cursive;
+        }
+
+        main > p {
+            /* Direct Child */
+            text-decoration: underline;
+        }
+
+        /* Class */
+        .accent-color {
+            color: #eb4d4b;
+        }
+
+        /* Class */
+        .highlight {
+            color: black;
+            background-color: yellow;
+        }
+
+        /* ID */
+        #lucky-number {
+            background-color: #eb4d4b;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="accent-color">Style Sandbox</h6>
+        <p>This html is a sandbox, feel free to explore everything you want.</p>
+    </header>
+    <main>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum molestie tincidunt. 
+            Phasellus congue urna in ipsum mattis, sed malesuada est blandit. Quisque eu sodales arcu. 
+            Integer non massa in ipsum pharetra facilisis. Ut laoreet neque eget mauris tincidunt molestie. 
+            Nulla facilisi. Nunc ullamcorper placerat vulputate. Vestibulum ornare eu mauris vel porta.
+        </p>
+        <p>
+            <span class="highlight">Proin et commodo odio. Curabitur eu convallis nibh.</span> 
+            Phasellus varius fringilla arcu at tristique. 
+            Proin faucibus magna enim, eget accumsan eros pellentesque sed. 
+            Praesent laoreet dui at nibh tincidunt, eget blandit mauris congue. 
+            <div>
+                <p>
+                    <span id="lucky-number">Integer 97</span> dignissim dui leo, id iaculis mi convallis placerat. 
+                    Suspendisse sodales velit mauris, eu tincidunt libero facilisis nec. 
+                    Pellentesque mattis urna non dolor varius vulputate. 
+                    Aenean sit amet risus sed diam tristique hendrerit dapibus at ligula.
+                </p>
+            </div>
+        </p>
+        <a href="#more-info">Learn More</a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Simple Website. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
