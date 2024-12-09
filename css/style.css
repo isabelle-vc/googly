@@ -29,6 +29,10 @@ header ul.nav a.nav-link {
     height: 40px;
 }
 
+header a:hover {
+    text-decoration: underline;
+}
+
 header .material-symbols-rounded {
   font-variation-settings: 
   'FILL' 0,
@@ -86,10 +90,11 @@ footer ul.nav {
     margin-right: 2rem;
 }
 
+footer a:hover {
+    text-decoration: underline;
+}
 
 :root, [data-bs-theme=light] {
     --bs-border-color: #202124;
     --bs-border-width: 2px;
 }
-
-footer
