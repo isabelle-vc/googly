@@ -38,8 +38,9 @@ header .material-symbols-rounded {
 
 }
 
-
-
+header .container {
+    margin-right: 4px;
+}
 
 /* This will overwrite ::after in ALL elements */
 ::after {
@@ -49,6 +50,7 @@ header .material-symbols-rounded {
 
 
 /* CONTENT -------------------------- */
+/*
 main {
     padding: 2em;
     max-width: 600px;
@@ -62,15 +64,32 @@ main a {
 
 main a:hover {
     text-decoration: underline;
-}
+}*/
 
 /* FOOTER -------------------------- */
 footer {
     text-align: center;
-    background: #222;
+    background: #171717;
     color: #fff;
     padding: 1em 0;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
+
+footer ul.nav li.nav-item a.nav-link {
+    color: #ffffff;
+}
+
+footer ul.nav {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+
+:root, [data-bs-theme=light] {
+    --bs-border-color: #202124;
+    --bs-border-width: 2px;
+}
+
+footer
