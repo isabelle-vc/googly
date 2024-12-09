@@ -54,21 +54,20 @@ header .container {
 
 
 /* CONTENT -------------------------- */
-/*
-main {
-    padding: 2em;
-    max-width: 600px;
-    margin: auto;
+
+body .form-control {
+    width: 50%
 }
 
-main a {
-    color: #007BFF;
-    text-decoration: none;
-}
+main .btn-primary {
+    --bs-btn-bg: #303134;
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-bg: #303134;
+    --bs-btn-hover-border-color: #4E5156;
+    --bs-btn-active-bg: #171717;
+    --bs-btn-active-border-color: transparent;
 
-main a:hover {
-    text-decoration: underline;
-}*/
+}
 
 /* FOOTER -------------------------- */
 footer {
