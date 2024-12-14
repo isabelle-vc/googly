@@ -1,0 +1,4 @@
+# Python Stuff 🐍
+__pycache__
+.venv/
+.python-version
