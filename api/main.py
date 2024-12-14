@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 from random import choice
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 emojis = ["🪴", "🌵", "🌻", "🌷", "🍀", "🍂", "🍁", "🌱"]
@@ -15,6 +16,14 @@ fake_db = [
         "profile_picture": "https://avatars.githubusercontent.com/u/15377830?v=4",
     },
 ]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
