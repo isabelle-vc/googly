@@ -52,6 +52,11 @@ header .container {
     display: none !important; 
 }
 
+header button.btn {
+    font-size: 1rem;
+    padding-top:0.25rem;
+    padding-bottom: 0.25rem;
+}
 
 /* CONTENT -------------------------- */
 
@@ -68,6 +73,39 @@ main .btn-primary {
     --bs-btn-active-border-color: transparent;
 
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60vh; 
+}
+
+input.form-control {
+    border: 0px;
+    border-radius: 0px;
+    background-color: #4E5156;
+    outline: none;
+    background-color: #4E5156;
+    width: 25%;
+    color: #ffffff;
+}
+
+
+input.form-control:focus {
+    outline: none;
+    background-color: #4E5156;
+    box-shadow: none;
+    color: #ffffff;
+    caret-color: #ffffff;
+}
+
+form span.input-group-text { 
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #4E5156;
+}
+
 
 /* FOOTER -------------------------- */
 footer {
