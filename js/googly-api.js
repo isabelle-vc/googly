@@ -8,6 +8,8 @@
  * @param {*} password User Password.
  * @param {*} callback Any function to execute something 
  *            you want using the data retrieved from the API. 
+ * @param {*} errorCallback Any function to execute something 
+ *            you want if the API returns an error. 
  */
 function doLogin(nickname, password, callback, errorCallback) {
 
