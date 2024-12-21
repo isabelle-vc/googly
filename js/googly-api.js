@@ -26,7 +26,7 @@ function doLogin(nickname, password, callback, errorCallback) {
         .then((response) => {
             if (!response.ok)
                 throw {
-                    "error": `HTTP error! status: ${response.status}`,
+                    "message": `HTTP error! status: ${response.status}`,
                     "payload": response
                 };
             return response.json();
