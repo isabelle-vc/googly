@@ -24,12 +24,14 @@
             resultImage.src = data.profile_picture;
         }
 
-        document.getElementById("submitLink").addEventListener("click", function (event) {
+        function onClickLogin(event) {
             event.preventDefault();
             const txtNickname = document.getElementById("txtNickname").value;
             const txtPassword = document.getElementById("txtPassword").value;
             doLogin(txtNickname, txtPassword, updateImage, showError)
-        });
+        }
+
+        document.getElementById("submitLink").addEventListener("click", onClickLogin);
     </script>
 </body>
 </html>

@@ -23,7 +23,10 @@ function doLogin(nickname, password, callback, errorCallback) {
     fetch(apiEndpoint, requestConfig)
         .then((response) => {
             if (!response.ok)
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw {
+                    "error": `HTTP error! status: ${response.status}`,
+                    "payload": response
+                };
             return response.json();
         })
         .then(callback)
