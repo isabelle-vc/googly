@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Update Example</title>
+</head>
+<body>
+    <input type="text" id="txtNickname" placeholder="nickname" />
+    <input type="password" id="txtPassword" placeholder="password" />
+    <a href="#" id="submitLink">Submit</a>
+    <br /><br />
+    <img id="resultImage" src="" alt="Result will appear here" />
+
+    <script src="../js/googly-api.js"></script>
+    <script>
+        function showError(error) {
+            console.error("Error:", error);
+            alert("An error occurred. Please try again.");
+        }
+
+        function updateImage(apiResponse) {
+            const resultImage = document.getElementById("resultImage");
+            resultImage.src = apiResponse.profile_picture;
+        }
+
+        function onClickLogin(event) {
+            event.preventDefault();
+            const txtNickname = document.getElementById("txtNickname").value;
+            const txtPassword = document.getElementById("txtPassword").value;
+            doLogin(txtNickname, txtPassword, updateImage, showError)
+        }
+
+        document.getElementById("submitLink").addEventListener("click", onClickLogin);
+    </script>
+</body>
+</html>
