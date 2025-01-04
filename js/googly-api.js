@@ -18,8 +18,8 @@ function doLogin(nickname, password, callback, errorCallback) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-            nickname: nickname,
-            password: password
+            "nickname": nickname,
+            "password": password
         })
     }
     fetch(apiEndpoint, requestConfig)

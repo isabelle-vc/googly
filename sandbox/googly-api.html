@@ -19,9 +19,9 @@
             alert("An error occurred. Please try again.");
         }
 
-        function updateImage(data) {
+        function updateImage(apiResponse) {
             const resultImage = document.getElementById("resultImage");
-            resultImage.src = data.profile_picture;
+            resultImage.src = apiResponse.profile_picture;
         }
 
         function onClickLogin(event) {
