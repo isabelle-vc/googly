@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!--Setting my CSS archive last is better for overwrite the templates style, because it's gonna be the last content pulled as truthfull-->
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/googly-ui.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                 <span class="material-symbols-rounded">apps</span>
               </a></li>
               <li><a href="#" class="px-2">
-                <button class="btn btn-primary d-inline-flex align-items-center" type="button">
+                <button class="btn btn-primary d-inline-flex align-items-center" type="button" onclick="onClick_login()">
                   Fazer login
                 </button>
               </a></li>
@@ -37,7 +38,7 @@
 
             <div class="dropdown-text-end">
               <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src=".docs/profile.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                <img src=".docs/favicon.png" alt="mdo" width="32" height="32" class="rounded-circle">
               </a>
             </div>
           </div>
@@ -98,3 +99,13 @@
 </body>
 
 </html>
+
+<!-- 
+TODO: 
+  - modal de login
+    - usuário
+    - senha
+    - botão p/ logar
+    - botão p/ fechar o modal -> clicar fora
+  - botão de sair
+-->
