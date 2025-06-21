@@ -3,7 +3,57 @@
 ![License](https://img.shields.io/github/license/isabelle-vc/googly?logo=apache&color=lightseagreen)
 ![#](https://img.shields.io/badge/python-3.9.6-yellow.svg)
 
-## Quick Start
+## API Spec
+
+In this section you will find the key documentation to use the Googly Restful API.
+
+### API Documentation
+
+```yml
+# Login Endpoint 🔓
+# You should use the following endpoint to do login.
+endpoint: "http://127.0.0.1:8000/login"
+http-method: "POST"
+json-body: >
+  {
+    "nickname": "username",
+    "password": "secret password"
+  }
+possible-errors:
+  - http-code: 401
+    meaning: The login and password doesn't match!
+  - http-code: 404
+    meaning: User doesn't exist in the database.
+```
+
+### Login Flow
+
+This diagram shows how the web application interacts with the api to do the login.
+
+```mermaid
+sequenceDiagram
+autonumber
+
+actor user
+participant googly-web
+participant googly-api
+
+user ->> googly-web: click login button
+
+googly-web ->> googly-web: get login data
+
+googly-web ->> googly-api: [POST] /login
+
+alt success
+    googly-api -->> googly-web: 200: { user-data }
+    googly-web ->> googly-web: update user image
+else error
+    googly-api -->> googly-web: 4xx: { error message }
+    googly-web ->> googly-web: show error message
+end
+```
+
+## Developer Quick Start
 
 Here are the steps you need to execute in order to have the API up and running.
 
@@ -30,8 +80,6 @@ If you already have, you just have to activate it...
 ```bash
 source .venv/bin/activate
 ```
-
-### The API
 
 To start the API, you just need to run the following commands.
 
