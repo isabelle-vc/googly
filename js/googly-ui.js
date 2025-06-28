@@ -48,6 +48,7 @@ function doLogin(nickname, password, callback, errorCallback) {
 // retorno: mensagem de erro
 function showError(error) {
     // TODO: improve this fuction 
+
     console.log("Deu ruim no login")
     console.log(error)
 
@@ -59,11 +60,14 @@ function showError(error) {
 // retorno: nova imagem de perfil
 function updateImage(data) {
     // TODO: update image in the UI
+    document.getElementById("avatar").src = data.profile_picture
+
     console.log("Deu bom no login")
     console.log(data)
 }
 
 // TODO: Create Listener for the Button
+
 
 // essa função faz o login
 // parâmetros:
