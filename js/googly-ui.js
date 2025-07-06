@@ -68,6 +68,38 @@ function updateImage(data) {
 
 // TODO: Create Listener for the Button
 
+// essa função troca o estilo e conteúdo do botão de login
+// parâmetro:
+//   - nenhum
+// retorno: nada
+function updateMainButton() {
+
+    const mainButton = document.getElementById("logInAndOut")
+    mainButton.textContent = "Sair"
+    mainButton.style.backgroundColor = "#CB0301"
+    console.log("Botão ok") //FIXME: log de teste, apagar depois
+}
+
+// essa função faz o login
+// parâmetros:
+//   - nenhum
+// retorno: nada
+// function onClick_login(){
+//     const user = "isabelle-vc"
+//     const password = "1234"
+//     doLogin(user, password, updateImage, showError)
+//     updateMainButton()
+// }
+
+function onClick_signin() {
+    const modal = document.getElementById("modalSignin");
+    modal.classList.add("d-block")
+}
+
+function onClick_closeSingin() {
+    const modal = document.getElementById("modalSignin");
+    modal.classList.remove("d-block")
+}
 
 // essa função faz o login
 // parâmetros:

@@ -30,15 +30,15 @@
                 <span class="material-symbols-rounded">apps</span>
               </a></li>
               <li><a href="#" class="px-2">
-                <button id="logInAndOut" class="btn btn-primary d-inline-flex align-items-center" type="button" onclick="onClick_login()">
+                <button id="logInAndOut" class="btn btn-primary d-inline-flex align-items-center" type="button" onclick="onClick_signin()">
                   Fazer login
                 </button>
               </a></li>
              </ul>
 
             <div class="dropdown-text-end">
-              <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img id="avatar"src=".docs/favicon.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              <a href="#" class="link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img id="avatar"src=".docs/favicon.png" alt="mdo" width="32" height="32" class="d-none rounded-circle">
               </a>
             </div>
           </div>
@@ -62,7 +62,7 @@
               <i href="#" class="fa fa-envelope material-symbols-rounded px-1" style="color: #5383EC;">photo_camera</i>
             </span>
           </div>
-      
+          
           <div class="d-flex gap-3 justify-content-center py-5">
             <button class="btn btn-primary d-inline-flex align-items-center" type="button">
               Pesquisa Google
@@ -96,6 +96,27 @@
         </ul>
       </footer>
   
+          <div class="modal modal-sheet p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin"> 
+            <div class="modal-dialog"> <div class="modal-content rounded-4 shadow"> 
+              <div class="modal-header p-5 pb-5 border-bottom-0"> 
+                <h1 class="fw-bold mb-0 fs-2">Sign in</h1> 
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="onClick_closeSingin()">
+                  <i href="#" class="fa fa-envelope material-symbols-rounded">Close</i>
+                </button> 
+              </div> 
+              <div class="modal-body p-5 pt-0"> 
+                <form class=""> 
+                <div class="form-floating mb-3"> <input class="form-control rounded-3" id="floatingInput" placeholder="name@example.com"> 
+                  <label for="floatingInput">Email address</label> 
+                </div> 
+                <div class="form-floating mb-3"> 
+                  <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password"> 
+                  <label for="floatingPassword">Password</label> 
+                </div> 
+                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" onclick="onClick_login()">Sign up</button>
+            </form>
+          </div>
+
 </body>
 
 </html>
@@ -103,9 +124,6 @@
 <!-- 
 TODO: 
   - modal de login
-    - usuário
-    - senha
-    - botão p/ logar
     - botão p/ fechar o modal -> clicar fora
-  - botão de sair
+  - botão de sair: ajustar estilo do botão
 -->
