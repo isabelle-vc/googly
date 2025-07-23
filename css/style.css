@@ -133,10 +133,6 @@ body .modal-content {
     background-color: #171717;
 }
 
-/* form {
-    height: min-content;
-} */
-
 #modalSignin button.btn-close {
     --bs-btn-close-bg: none;
     color: #fff;
@@ -153,6 +149,11 @@ body .modal-content {
 
 .form-floating>.form-control-plaintext~label, .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
     color: #fff;
+    padding-top: 16px;
+}
+
+.form-floating>.form-control-plaintext:focus, .form-floating>.form-control-plaintext:not(:placeholder-shown), .form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 32px;
 }
 
 /* FOOTER -------------------------- */

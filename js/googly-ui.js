@@ -46,24 +46,20 @@ function doLogin(nickname, password, callback, errorCallback) {
 // parâmetros:
 //   - nenhum
 // retorno: mensagem de erro
-function showError(error) {
+function ui__showError(apiResponseError) {
     // TODO: improve this fuction 
-
+    alert("deu ruim")
     console.log("Deu ruim no login")
-    console.log(error)
+    console.log(apiResponseError)
 
 }
 
-// essa função troca a imagem de perfil
+// essa função troca a imagem de perfil.
 // parâmetro:
-//   - data: imagem de perfil
-// retorno: nova imagem de perfil
-function updateImage(data) {
-    // TODO: update image in the UI
-    document.getElementById("avatar").src = data.profile_picture
-
-    console.log("Deu bom no login")
-    console.log(data)
+//   - apiResponse: resposta da API, um objecto JS.
+// retorno: nenhum.
+function ui__updateImage(imageURL) {
+    document.getElementById("avatar").src = imageURL
 }
 
 // TODO: Create Listener for the Button
@@ -72,24 +68,44 @@ function updateImage(data) {
 // parâmetro:
 //   - nenhum
 // retorno: nada
-function updateMainButton() {
-
+function ui__updateMainButton() {
     const mainButton = document.getElementById("logInAndOut")
     mainButton.textContent = "Sair"
     mainButton.style.backgroundColor = "#CB0301"
     console.log("Botão ok") //FIXME: log de teste, apagar depois
 }
 
+// TODO: Create Doc
+function ui__loginOk(apiResponse) {
+    console.log("Deu bom no login, apiResponse 👇")
+    console.log(apiResponse)
+    ui__updateImage(apiResponse.profile_picture)
+    ui__updateMainButton()
+}
+
 // essa função faz o login
 // parâmetros:
 //   - nenhum
 // retorno: nada
-// function onClick_login(){
-//     const user = "isabelle-vc"
-//     const password = "1234"
-//     doLogin(user, password, updateImage, showError)
-//     updateMainButton()
-// }
+function onClick_login(){
+    // const user = "isabelle-vc"
+    // const password = "1234"
+    const user = document.getElementById("floatingInput").value
+    const password = document.getElementById("floatingPassword").value
+    /* Manda a API tentar autenticar o usuário */
+    doLogin(
+        /* Faz parte do Payload que será enviado p/ a API 👇 */
+        user,  
+        password, 
+        /* Se der boa ✅, o doLogin vai chamar a função 👇 */
+        ui__loginOk, 
+        /* Se der ruim ❌, o doLogin vai chamar a função 👇 */
+        ui__showError
+        /* PS.: ambas as funções vão receber um Objeto (JS)
+           com os dados da API, independente se deu certo, 
+           ou não. */
+    );
+}
 
 function onClick_signin() {
     const modal = document.getElementById("modalSignin");
@@ -105,8 +121,21 @@ function onClick_closeSingin() {
 // parâmetros:
 //   - nenhum
 // retorno: nada
-function onClick_login(){
-    const user = "isabelle-vc"
-    const password = "1234"
-    doLogin(user, password, updateImage, showError)
-}
+// function onClick_login(){
+    
+//     // const correctUser = nickname
+//     // const correctPassword = data.password
+//     const user = document.getElementById("floatingInput").textContent
+//     const password = document.getElementById("floatingPassword").textContent
+//     doLogin (user, password, updateImage, showError)
+    
+//     if (user === correctUser){
+//         document.getElementById("avatar").classList.toggle("d-none")
+//         document.getElementById("modalSignin").classList.remove("d-block")
+//         updateMainButton()
+//     } else {
+//         console.log("⚠️ login falhou")
+//         // error
+//     }
+
+// }
