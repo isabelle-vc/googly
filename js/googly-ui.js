@@ -38,7 +38,7 @@ function doLogin(nickname, password, callback, errorCallback) {
 
 
 // -------------------------------------------------------------
-// Frontend Interaction
+// Frontend Fuction Interaction
 // -------------------------------------------------------------
 
 
@@ -59,7 +59,10 @@ function ui__showError(apiResponseError) {
 //   - apiResponse: resposta da API, um objecto JS.
 // retorno: nenhum.
 function ui__updateImage(imageURL) {
-    document.getElementById("avatar").src = imageURL
+    const profilePicture = document.getElementById("avatar")
+    profilePicture.classList.remove("d-none")
+    profilePicture.src = imageURL
+
 }
 
 // TODO: Create Listener for the Button
@@ -75,21 +78,27 @@ function ui__updateMainButton() {
     console.log("Botão ok") //FIXME: log de teste, apagar depois
 }
 
-// TODO: Create Doc
+// essa função atualiza elementos do UI (foto de perfil e botão)
+// parâmetro:
+//   - nenhum
+// retorno: nada
 function ui__loginOk(apiResponse) {
     console.log("Deu bom no login, apiResponse 👇")
     console.log(apiResponse)
+    const modal = document.getElementById("modalSignin").remove("d-block")
     ui__updateImage(apiResponse.profile_picture)
     ui__updateMainButton()
 }
+
+// -------------------------------------------------------------
+// Frontend Interaction
+// -------------------------------------------------------------
 
 // essa função faz o login
 // parâmetros:
 //   - nenhum
 // retorno: nada
 function onClick_login(){
-    // const user = "isabelle-vc"
-    // const password = "1234"
     const user = document.getElementById("floatingInput").value
     const password = document.getElementById("floatingPassword").value
     /* Manda a API tentar autenticar o usuário */
