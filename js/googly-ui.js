@@ -73,9 +73,20 @@ function ui__updateImage(imageURL) {
 // retorno: nada
 function ui__updateMainButton() {
     const mainButton = document.getElementById("logInAndOut")
+    // mainButton.textContent = "Sair"
+    // mainButton.classList.add("btnLogOut")
+
+    if (mainButton.classList.contains("btnLogOut")){
+        mainButton.classList.remove("btnLogOut")
+        mainButton.classList.add("btnLogIn")
+        console.log("Botão login ok")
+        return
+    }
     mainButton.textContent = "Sair"
-    mainButton.style.backgroundColor = "#CB0301"
-    console.log("Botão ok") //FIXME: log de teste, apagar depois
+    mainButton.classList.remove("btnLogIn")
+    mainButton.classList.add("btnLogOut")
+    console.log("Botão sair ok") //FIXME: log de teste, apagar depois
+
 }
 
 // essa função atualiza elementos do UI (foto de perfil e botão)
@@ -125,26 +136,3 @@ function onClick_closeSingin() {
     const modal = document.getElementById("modalSignin");
     modal.classList.remove("d-block")
 }
-
-// essa função faz o login
-// parâmetros:
-//   - nenhum
-// retorno: nada
-// function onClick_login(){
-    
-//     // const correctUser = nickname
-//     // const correctPassword = data.password
-//     const user = document.getElementById("floatingInput").textContent
-//     const password = document.getElementById("floatingPassword").textContent
-//     doLogin (user, password, updateImage, showError)
-    
-//     if (user === correctUser){
-//         document.getElementById("avatar").classList.toggle("d-none")
-//         document.getElementById("modalSignin").classList.remove("d-block")
-//         updateMainButton()
-//     } else {
-//         console.log("⚠️ login falhou")
-//         // error
-//     }
-
-// }

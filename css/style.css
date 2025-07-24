@@ -1,12 +1,14 @@
 /* General styles */
 :root {
     --color-white: #fff;
-    --color-gray-100:#9BA0A5;
-    --color-gray-300:#4E5156;
-    --color-gray-500:#303134;
-    --color-gray-700:#202124;
-    --color-gray-900:#171717;
-    --color-blue-500:#5383EC;
+    --color-gray-100: #9BA0A5;
+    --color-gray-300: #4E5156;
+    --color-gray-500: #303134;
+    --color-gray-700: #202124;
+    --color-gray-900: #171717;
+    --color-blue-500: #5383EC;
+    --color-red-500: #CB0301;
+    --color-red-700: #900301;
 }
 
 body {
@@ -44,11 +46,11 @@ header a:hover {
 }
 
 header .material-symbols-rounded {
-  font-variation-settings: 
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 40,
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 40,
 
 }
 
@@ -59,27 +61,36 @@ header .container {
 /* This will overwrite ::after in ALL elements */
 ::after {
     content: "";
-    display: none !important; 
+    display: none !important;
 }
 
 header button.btn {
     font-size: 1rem;
-    padding-top:0.25rem;
+    padding-top: 0.25rem;
     padding-bottom: 0.25rem;
 }
 
 /* CONTENT -------------------------- */
+.btnLogOut {
+    --bs-btn-bg: var(--color-red-500);
+    --bs-btn-border-color: var(--color-red-500);
+    --bs-btn-hover-bg: var(--color-red-700);
+    --bs-btn-hover-border-color: var(--color-red-700);
+    --bs-btn-active-bg: var(--color-red-500);
+    --bs-btn-active-border-color: var(--color-red-700);
+}
+
 
 body .form-control {
     width: 50%
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 70vh;         
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    text-align: center;
 }
 
 main .btn-primary {
@@ -96,7 +107,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: min-content; 
+    height: min-content;
 }
 
 input.form-control {
@@ -118,7 +129,7 @@ input.form-control:focus {
     caret-color: var(--color-white);
 }
 
-form span.input-group-text { 
+form span.input-group-text {
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: var(--color-gray-300);
@@ -153,16 +164,23 @@ body .modal-content {
 #floatingInput {
     width: 100%;
 }
+
 #floatingPassword {
     width: 100%;
 }
 
-.form-floating>.form-control-plaintext~label, .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
+.form-floating>.form-control-plaintext~label,
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
     color: var(--color-white);
     padding-top: 16px;
 }
 
-.form-floating>.form-control-plaintext:focus, .form-floating>.form-control-plaintext:not(:placeholder-shown), .form-floating>.form-control:focus, .form-floating>.form-control:not(:placeholder-shown) {
+.form-floating>.form-control-plaintext:focus,
+.form-floating>.form-control-plaintext:not(:placeholder-shown),
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown) {
     padding-top: 32px;
 }
 
@@ -190,7 +208,8 @@ footer a:hover {
     text-decoration: underline;
 }
 
-:root, [data-bs-theme=light] {
+:root,
+[data-bs-theme=light] {
     --bs-border-color: var(--color-gray-700);
     --bs-border-width: 2px;
 }
