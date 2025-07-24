@@ -1,4 +1,9 @@
-/* General styles */
+/* 
+-------------------------------------------------------------
+General styles
+------------------------------------------------------------- 
+*/
+
 :root {
     --color-white: #fff;
     --color-gray-100: #9BA0A5;
@@ -20,7 +25,12 @@ body {
     color: var(--color-white);
 }
 
-/* HEADER -------------------------- */
+/* 
+-------------------------------------------------------------
+Header
+------------------------------------------------------------- 
+*/
+
 header {
     background: var(--color-gray-700);
     color: var(--color-white);
@@ -70,7 +80,6 @@ header button.btn {
     padding-bottom: 0.25rem;
 }
 
-/* CONTENT -------------------------- */
 .btnLogOut {
     --bs-btn-bg: var(--color-red-500);
     --bs-btn-border-color: var(--color-red-500);
@@ -80,6 +89,11 @@ header button.btn {
     --bs-btn-active-border-color: var(--color-red-700);
 }
 
+/* 
+-------------------------------------------------------------
+Content
+------------------------------------------------------------- 
+*/
 
 body .form-control {
     width: 50%
@@ -135,7 +149,11 @@ form span.input-group-text {
     background-color: var(--color-gray-300);
 }
 
-/* SIGN UP MODAL -------------------- */
+/* 
+-------------------------------------------------------------
+Sign Up Modal
+------------------------------------------------------------- 
+*/
 
 #modalSignin {
     content: '';
@@ -184,7 +202,12 @@ body .modal-content {
     padding-top: 32px;
 }
 
-/* FOOTER -------------------------- */
+/* 
+-------------------------------------------------------------
+Footer
+------------------------------------------------------------- 
+*/
+
 footer {
     text-align: center;
     background: var(--color-gray-900);
