@@ -1,17 +1,27 @@
 /* General styles */
+:root {
+    --color-white: #fff;
+    --color-gray-100:#9BA0A5;
+    --color-gray-300:#4E5156;
+    --color-gray-500:#303134;
+    --color-gray-700:#202124;
+    --color-gray-900:#171717;
+    --color-blue-500:#5383EC;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #202124;
-    color: #ffffff;
+    background-color: var(--color-gray-700);
+    color: var(--color-white);
 }
 
 /* HEADER -------------------------- */
 header {
-    background: #202124;
-    color: #fff;
+    background: var(--color-gray-700);
+    color: var(--color-white);
     padding: 1em 0;
     text-align: center;
 }
@@ -25,7 +35,7 @@ header ul.nav {
 }
 
 header ul.nav a.nav-link {
-    color: #fff;
+    color: var(--color-white);
     height: 40px;
 }
 
@@ -73,11 +83,11 @@ main {
 }
 
 main .btn-primary {
-    --bs-btn-bg: #303134;
+    --bs-btn-bg: var(--color-gray-500);
     --bs-btn-border-color: transparent;
-    --bs-btn-hover-bg: #303134;
-    --bs-btn-hover-border-color: #4E5156;
-    --bs-btn-active-bg: #171717;
+    --bs-btn-hover-bg: var(--color-gray-500);
+    --bs-btn-hover-border-color: var(--color-gray-300);
+    --bs-btn-active-bg: var(--color-gray-900);
     --bs-btn-active-border-color: transparent;
 
 }
@@ -92,26 +102,26 @@ form {
 input.form-control {
     border: 0px;
     border-radius: 0px;
-    background-color: #4E5156;
+    background-color: var(--color-gray-300);
     outline: none;
-    background-color: #4E5156;
+    background-color: var(--color-gray-300);
     width: 25%;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 
 input.form-control:focus {
     outline: none;
-    background-color: #4E5156;
+    background-color: var(--color-gray-300);
     box-shadow: none;
-    color: #ffffff;
-    caret-color: #ffffff;
+    color: var(--color-white);
+    caret-color: var(--color-white);
 }
 
 form span.input-group-text { 
     padding-left: 1rem;
     padding-right: 1rem;
-    background-color: #4E5156;
+    background-color: var(--color-gray-300);
 }
 
 /* SIGN UP MODAL -------------------- */
@@ -130,12 +140,12 @@ form span.input-group-text {
 }
 
 body .modal-content {
-    background-color: #171717;
+    background-color: var(--color-gray-900);
 }
 
 #modalSignin button.btn-close {
     --bs-btn-close-bg: none;
-    color: #fff;
+    color: var(--color-white);
     width: 24px;
     height: 24px;
 }
@@ -148,7 +158,7 @@ body .modal-content {
 }
 
 .form-floating>.form-control-plaintext~label, .form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
-    color: #fff;
+    color: var(--color-white);
     padding-top: 16px;
 }
 
@@ -159,8 +169,8 @@ body .modal-content {
 /* FOOTER -------------------------- */
 footer {
     text-align: center;
-    background: #171717;
-    color: #fff;
+    background: var(--color-gray-900);
+    color: var(--color-white);
     padding: 1em 0;
     position: fixed;
     bottom: 0;
@@ -168,7 +178,7 @@ footer {
 }
 
 footer ul.nav li.nav-item a.nav-link {
-    color: #ffffff;
+    color: var(--color-white);
 }
 
 footer ul.nav {
@@ -181,6 +191,6 @@ footer a:hover {
 }
 
 :root, [data-bs-theme=light] {
-    --bs-border-color: #202124;
+    --bs-border-color: var(--color-gray-700);
     --bs-border-width: 2px;
 }
