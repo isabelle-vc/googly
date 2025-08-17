@@ -146,6 +146,12 @@ function onClick_closeSingIn() {
 
     modal.classList.remove("d-block")
     alertBanner.classList.add("d-none")
+
+
+    // Clear all input fields inside the modal
+    const inputs = modal.querySelectorAll("input");
+    inputs.forEach(input => input.value = "");
+
 }
 
 // ----------------------------------------
