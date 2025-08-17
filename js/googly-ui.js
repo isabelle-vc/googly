@@ -142,7 +142,10 @@ function onClick_signOut() {
 
 function onClick_closeSingIn() {
     const modal = document.getElementById("modalSignin");
+    const alertBanner = document.getElementById("alertDanger")
+
     modal.classList.remove("d-block")
+    alertBanner.classList.add("d-none")
 }
 
 // ----------------------------------------
