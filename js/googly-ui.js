@@ -47,11 +47,11 @@ function doLogin(nickname, password, callback, errorCallback) {
 //   - nenhum
 // retorno: mensagem de erro
 function ui__showError(apiResponseError) {
-    // TODO: improve this fuction 
-    alert("deu ruim")
+    const alertBanner = document.getElementById("alertDanger")
+    alertBanner.classList.remove("d-none")
+    
     console.log("Deu ruim no login")
     console.log(apiResponseError)
-
 }
 
 // essa função troca a imagem de perfil.
@@ -74,9 +74,11 @@ function ui__updateImage(imageURL) {
 function ui__showLogOutButton() {
     const btnLogIn = document.getElementById("logIn")
     const btnLogOut = document.getElementById("logOut")
-
+    const alertBanner = document.getElementById("alertDanger")
+    
     btnLogIn.classList.add("d-none")
     btnLogOut.classList.remove("d-none")
+    alertBanner.classList.add("d-none")
 }
 
 function ui__showLogInButton() {
