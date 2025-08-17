@@ -107,16 +107,16 @@ function ui__loginOk(apiResponse) {
 // parâmetros:
 //   - nenhum
 // retorno: nada
-function onClick_login(){
+function onClick_login() {
     const user = document.getElementById("floatingInput").value
     const password = document.getElementById("floatingPassword").value
     /* Manda a API tentar autenticar o usuário */
     doLogin(
         /* Faz parte do Payload que será enviado p/ a API 👇 */
-        user,  
-        password, 
+        user,
+        password,
         /* Se der boa ✅, o doLogin vai chamar a função 👇 */
-        ui__loginOk, 
+        ui__loginOk,
         /* Se der ruim ❌, o doLogin vai chamar a função 👇 */
         ui__showError
         /* PS.: ambas as funções vão receber um Objeto (JS)
@@ -125,8 +125,9 @@ function onClick_login(){
     );
 }
 
-function onClick_signin() {
+function onClick_signIn() {
     const modal = document.getElementById("modalSignin");
+
     modal.classList.add("d-block")
 }
 
