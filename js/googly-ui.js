@@ -71,22 +71,20 @@ function ui__updateImage(imageURL) {
 // parâmetro:
 //   - nenhum
 // retorno: nada
-function ui__updateMainButton() {
-    const mainButton = document.getElementById("logInAndOut")
-    // mainButton.textContent = "Sair"
-    // mainButton.classList.add("btnLogOut")
+function ui__showLogOutButton() {
+    const btnLogIn = document.getElementById("logIn")
+    const btnLogOut = document.getElementById("logOut")
 
-    if (mainButton.classList.contains("btnLogOut")){
-        mainButton.classList.remove("btnLogOut")
-        mainButton.classList.add("btnLogIn")
-        console.log("Botão login ok")
-        return
-    }
-    mainButton.textContent = "Sair"
-    mainButton.classList.remove("btnLogIn")
-    mainButton.classList.add("btnLogOut")
-    console.log("Botão sair ok") //FIXME: log de teste, apagar depois
+    btnLogIn.classList.add("d-none")
+    btnLogOut.classList.remove("d-none")
+}
 
+function ui__showLogInButton() {
+    const btnLogIn = document.getElementById("logIn")
+    const btnLogOut = document.getElementById("logOut")
+
+    btnLogOut.classList.add("d-none")
+    btnLogIn.classList.remove("d-none")
 }
 
 // essa função atualiza elementos do UI (foto de perfil e botão)
@@ -98,7 +96,7 @@ function ui__loginOk(apiResponse) {
     console.log(apiResponse)
     const modal = document.getElementById("modalSignin").remove("d-block")
     ui__updateImage(apiResponse.profile_picture)
-    ui__updateMainButton()
+    ui__showLogOutButton()
 }
 
 // -------------------------------------------------------------
