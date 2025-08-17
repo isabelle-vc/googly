@@ -94,7 +94,8 @@ function ui__showLogInButton() {
 function ui__loginOk(apiResponse) {
     console.log("Deu bom no login, apiResponse 👇")
     console.log(apiResponse)
-    const modal = document.getElementById("modalSignin").remove("d-block")
+
+    onClick_closeSingIn()
     ui__updateImage(apiResponse.profile_picture)
     ui__showLogOutButton()
 }
@@ -131,7 +132,13 @@ function onClick_signIn() {
     modal.classList.add("d-block")
 }
 
-function onClick_closeSingin() {
+function onClick_signOut() {
+    const profilePicture = document.getElementById("avatar")
+    profilePicture.classList.add("d-none")
+    ui__showLogInButton()
+}
+
+function onClick_closeSingIn() {
     const modal = document.getElementById("modalSignin");
     modal.classList.remove("d-block")
 }
