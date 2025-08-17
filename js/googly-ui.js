@@ -135,3 +135,9 @@ function onClick_closeSingin() {
     const modal = document.getElementById("modalSignin");
     modal.classList.remove("d-block")
 }
+
+// ----------------------------------------
+// Run
+// ----------------------------------------
+
+console.log("I'm executing as soon as the web page loads!");
