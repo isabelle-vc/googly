@@ -171,3 +171,18 @@ function onClick_closeSingIn() {
 // ----------------------------------------
 
 console.log("I'm executing as soon as the web page loads!");
+
+ 
+if (localStorage.getItem("login") === "true") {
+    const user = localStorage.getItem("username")
+
+
+    ui__loginOk(user)
+    console.log(user)
+}
+else {
+    console.log("nenhuma chave salva")
+}
+// local storage: se login:true quando carregar usar info
+
+console.log("Done loading");
