@@ -49,7 +49,7 @@ function doLogin(nickname, password, callback, errorCallback) {
 function ui__showError(apiResponseError) {
     const alertBanner = document.getElementById("alertDanger")
     alertBanner.classList.remove("d-none")
-    
+
     console.log("Deu ruim no login")
     console.log(apiResponseError)
 }
@@ -75,7 +75,7 @@ function ui__showLogOutButton() {
     const btnLogIn = document.getElementById("logIn")
     const btnLogOut = document.getElementById("logOut")
     const alertBanner = document.getElementById("alertDanger")
-    
+
     btnLogIn.classList.add("d-none")
     btnLogOut.classList.remove("d-none")
     alertBanner.classList.add("d-none")
@@ -94,12 +94,19 @@ function ui__showLogInButton() {
 //   - nenhum
 // retorno: nada
 function ui__loginOk(apiResponse) {
+    const user = document.getElementById("floatingInput").value
+
     console.log("Deu bom no login, apiResponse 👇")
     console.log(apiResponse)
 
     onClick_closeSingIn()
     ui__updateImage(apiResponse.profile_picture)
     ui__showLogOutButton()
+
+    localStorage.setItem("login", "true")
+    localStorage.setItem("username", user)
+
+    // local storage: set item login:true
 }
 
 // -------------------------------------------------------------
@@ -126,6 +133,7 @@ function onClick_login() {
            com os dados da API, independente se deu certo, 
            ou não. */
     );
+
 }
 
 function onClick_signIn() {
