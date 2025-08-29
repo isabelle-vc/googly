@@ -62,7 +62,6 @@ function ui__updateImage(imageURL) {
     const profilePicture = document.getElementById("avatar")
     profilePicture.classList.remove("d-none")
     profilePicture.src = imageURL
-
 }
 
 // TODO: Create Listener for the Button
@@ -94,19 +93,18 @@ function ui__showLogInButton() {
 //   - nenhum
 // retorno: nada
 function ui__loginOk(apiResponse) {
-    const user = document.getElementById("floatingInput").value
-
+    
     console.log("Deu bom no login, apiResponse 👇")
     console.log(apiResponse)
-
+    
     onClick_closeSingIn()
     ui__updateImage(apiResponse.profile_picture)
     ui__showLogOutButton()
 
+    // Save API response infos on Local Storage for automatic login when reloading the page
     localStorage.setItem("login", "true")
-    localStorage.setItem("username", user)
-
-    // local storage: set item login:true
+    localStorage.setItem("nickname", apiResponse.nickname)
+    localStorage.setItem("profile_picture", apiResponse.profile_picture)
 }
 
 // -------------------------------------------------------------
@@ -147,9 +145,8 @@ function onClick_signOut() {
     profilePicture.classList.add("d-none")
     ui__showLogInButton()
 
+    // Clean all the keys on Local Storage on log out
     localStorage.clear()
-
-    // local storage: clean item login:true
 }
 
 function onClick_closeSingIn() {
@@ -163,7 +160,6 @@ function onClick_closeSingIn() {
     // Clear all input fields inside the modal
     const inputs = modal.querySelectorAll("input");
     inputs.forEach(input => input.value = "");
-
 }
 
 // ----------------------------------------
@@ -172,17 +168,19 @@ function onClick_closeSingIn() {
 
 console.log("I'm executing as soon as the web page loads!");
 
- 
 if (localStorage.getItem("login") === "true") {
-    const user = localStorage.getItem("username")
 
+    // Get the values from the keys saved on Local Storage
+    const user = localStorage.getItem("nickname")
+    const imageURL = localStorage.getItem("profile_picture")
 
-    ui__loginOk(user)
+    // Change UI with the saved values on Local Storage
+    ui__updateImage(imageURL)
+    ui__showLogOutButton()
     console.log(user)
 }
 else {
-    console.log("nenhuma chave salva")
+    console.log("🔒 No key found")
 }
-// local storage: se login:true quando carregar usar info
 
 console.log("Done loading");
