@@ -146,6 +146,10 @@ function onClick_signOut() {
     const profilePicture = document.getElementById("avatar")
     profilePicture.classList.add("d-none")
     ui__showLogInButton()
+
+    localStorage.clear()
+
+    // local storage: clean item login:true
 }
 
 function onClick_closeSingIn() {
